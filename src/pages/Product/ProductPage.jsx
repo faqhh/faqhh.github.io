@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import getAllProducts from '../../services/index'
+import getAllProducts from '../../services/getAllProducts'
 import CardList from '../../components/CardList/CardList'
 import Navbar from '../../components/Navbar/Navbar'
 import RadioButton from '../../components/RadioButton/RadioButton'
