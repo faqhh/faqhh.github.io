@@ -5,8 +5,6 @@ const PostApp = () => {
   const [posts, setPosts] = useState([]);
   const [formData, setFormData] = useState({ title: '', body: '' });
   const [responseMessage, setResponseMessage] = useState('');
-
-  // Fetch posts from JSONPlaceholder API
   useEffect(() => {
     axios.get('https://jsonplaceholder.typicode.com/posts')
       .then((response) => {
@@ -16,8 +14,6 @@ const PostApp = () => {
         console.error('There was an error fetching the posts:', error);
       });
   }, []);
-
-  // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -25,17 +21,13 @@ const PostApp = () => {
       [name]: value,
     }));
   };
-
-  // Handle form submission (POST request)
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // POST request to add a new post
     axios.post('https://jsonplaceholder.typicode.com/posts', formData)
       .then((response) => {
         setResponseMessage('Post added successfully!');
         setPosts((prevPosts) => [response.data, ...prevPosts]);
-        setFormData({ title: '', body: '' }); // Clear the form
+        setFormData({ title: '', body: '' });
       })
       .catch((error) => {
         setResponseMessage('Error adding post.');

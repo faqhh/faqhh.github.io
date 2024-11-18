@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import getAllProducts from '../../services/getAllProducts'
+import getAllProducts from '../../services/index'
 import CardList from '../../components/CardList/CardList'
 import Navbar from '../../components/Navbar/Navbar'
 import RadioButton from '../../components/RadioButton/RadioButton'
@@ -9,7 +9,6 @@ export default function ProductPage() {
   useEffect(() => {
     let allProducts = getAllProducts()
     allProducts = allProducts.length > 0 ? allProducts : []
-    // allProducts = []
     setProducts(allProducts)
   }, [])
 

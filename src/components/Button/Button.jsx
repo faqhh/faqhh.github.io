@@ -44,9 +44,3 @@ Button.propTypes = {
   className: PropTypes.string,
   type: PropTypes.oneOf(['button', 'submit', 'reset']) 
 }
-
-// <Button>
-//   <span></span>
-//   <h1></h1>
-// </Button>
-

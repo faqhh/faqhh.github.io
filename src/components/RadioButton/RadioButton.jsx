@@ -1,7 +1,6 @@
 import  { useState } from "react";
 
 export default function RadioButton({ options, defaultValue }) {
-  // Set the selected state to the defaultValue passed as prop or the first option if no default is provided
   const [selected, setSelected] = useState(defaultValue || options[0]?.value);
 
   return (
@@ -17,7 +16,7 @@ export default function RadioButton({ options, defaultValue }) {
             value={option.value}
             checked={selected === option.value}
             onChange={() => setSelected(option.value)}
-            className="hidden" // Hide default radio button
+            className="hidden"
           />
           <span
             className={`w-4 h-4 rounded-full flex items-center justify-center border ${
